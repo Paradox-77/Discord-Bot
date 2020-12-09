@@ -1,2 +1,2 @@
 # Discord-Bot
-My first Discord Bot
+My first JavaScript Discord Bot
