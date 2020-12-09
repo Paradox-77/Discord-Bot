@@ -10,4 +10,4 @@ client.once('ready', () => {
 
 
 
-client.login('Nzg1MDkyMzM1Njc4NjUyNDc4.X8y0Nw.d_0DLtJ6oIFyGKCTHq1s-eiCTjY');
+client.login('bot.Token');
