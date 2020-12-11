@@ -39,6 +39,14 @@ client.on('message', message =>{
         client.commands.get('pigshot').execute(message, args);
     } else if(command == 'xyzwerewolf'){
         client.commands.get('xyzwerewolf').execute(message, args);
+    } else if(command == 'dremistakem'){
+        client.commands.get('dremistakem').execute(message, args);
+    } else if(command == 'test'){
+        client.commands.get('test').execute(message, args);
+    } else if(command == 'embed'){
+
+        client.commands.get('embed').execute(message, args, Discord)
+
     }
 });
 
