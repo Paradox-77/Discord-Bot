@@ -31,6 +31,14 @@ client.on('message', message =>{
         client.commands.get('website').execute(message, args);
     } else if(command == 'help'){
         client.commands.get('help').execute(message, args);
+    } else if(command == 'desc'){
+        client.commands.get('desc').execute(message, args);
+    } else if(command == 'paradox_77'){
+        client.commands.get('paradox_77').execute(message, args);
+    } else if(command == 'pigshot'){
+        client.commands.get('pigshot').execute(message, args);
+    } else if(command == 'xyzwerewolf'){
+        client.commands.get('xyzwerewolf').execute(message, args);
     }
 });
 
