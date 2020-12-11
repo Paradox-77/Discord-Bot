@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = '-'
+const prefix = '!'
 
 const fs = require('fs');
 
@@ -16,7 +16,7 @@ for(const file of commandFiles){
 };
 
 client.once('ready', () => {
-    console.log('Discord-Bot is initialized and online.');
+    console.log('Paradoxic Control is initialized and online.');
 });
 
 client.on('message', message =>{
@@ -25,8 +25,12 @@ client.on('message', message =>{
     const args = message.content.slice(prefix.length).split(/ +/)
     const command = args.shift().toLowerCase();
 
-    if(command === 'ping'){
-        client.commands.get('ping').execute(message, args);
+    if(command === 'ip'){
+        client.commands.get('ip').execute(message, args);
+    } else if(command == 'website'){
+        client.commands.get('website').execute(message, args);
+    } else if(command == 'help'){
+        client.commands.get('help').execute(message, args);
     }
 });
 
