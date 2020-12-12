@@ -15,7 +15,7 @@ module.exports = {
                 }
             
             } else {
-            message.channel.send('Stfu you aint a mod.')
+            message.channel.send('Only my dad can do that.')
         }
 
 
