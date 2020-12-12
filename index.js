@@ -1,6 +1,9 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
+require("dotenv").config()
 
 const client = new Discord.Client();
+client.login(process.env.bottoken)
+console.log(process.env.bottoken)
 
 const prefix = '!'
 
@@ -37,17 +40,27 @@ client.on('message', message =>{
         client.commands.get('paradox_77').execute(message, args);
     } else if(command == 'pigshot'){
         client.commands.get('pigshot').execute(message, args);
-    } else if(command == 'xyzwerewolf'){
-        client.commands.get('xyzwerewolf').execute(message, args);
+    } else if(command == 'xyz_reet'){
+        client.commands.get('xyz_reet').execute(message, args);
     } else if(command == 'dremistakem'){
         client.commands.get('dremistakem').execute(message, args);
-    } else if(command == 'test'){
-        client.commands.get('test').execute(message, args);
+    } else if(command == 'purge'){
+        client.commands.get('purge').execute(message, args);
     } else if(command == 'embed'){
-
         client.commands.get('embed').execute(message, args, Discord)
-
+    } else if(command == 'dog'){
+        client.commands.get('dog').execute(message, args)
+    } else if(command == 'hi'){
+        client.commands.get('hi').execute(message, args)
+    } else if(command == 'gs_stargamer'){
+        client.commands.get('gs_stargamer').execute(message, args)
+    } else if(command == 'kick'){
+        client.commands.get('kick').execute(message, args)
+    } else if(command == 'ban'){
+        client.commands.get('ban').execute(message, args)
     }
 });
 
-client.login('NzQyMjA4ODQ2MDI1NDU3NzE0.XzCx2g.qKMhbexnOO8u1G1dlv-816bjkKM');
+const server = require("express")()
+server.all("/", (req, res) => res.send("kept alive"))
+server.listen(3000, () => console.log("server running"))
