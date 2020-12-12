@@ -5,7 +5,6 @@ dotenv.config()
 
 const client = new Discord.Client();
 client.login(process.env.bottoken)
-console.log(process.env.bottoken)
 
 const prefix = '!'
 
