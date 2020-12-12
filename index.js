@@ -1,5 +1,7 @@
 const Discord = require("discord.js");
+const dotenv = require("dotenv")
 require("dotenv").config()
+dotenv.config()
 
 const client = new Discord.Client();
 client.login(process.env.bottoken)
