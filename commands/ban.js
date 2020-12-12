@@ -3,7 +3,7 @@ module.exports = {
     description: "Bans Players",
     execute(message, args){
 
-        if(message.member.roles.cache.has('786805870846935090')){
+        if(message.member.roles.cache.has('773390283982372909')){
 
                 const member = message.mentions.users.first();
                 if(member){
