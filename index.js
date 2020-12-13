@@ -53,8 +53,6 @@ client.on('message', message =>{
         client.commands.get('dog').execute(message, args)
     } else if(command == 'hi'){
         client.commands.get('hi').execute(message, args)
-    } else if(command == 'gs_stargamer'){
-        client.commands.get('gs_stargamer').execute(message, args)
     } else if(command == 'kick'){
         client.commands.get('kick').execute(message, args)
     } else if(command == 'ban'){
