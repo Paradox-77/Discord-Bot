@@ -34,7 +34,7 @@ client.on('message', message =>{
     } else if(command == 'website'){
         client.commands.get('website').execute(message, args);
     } else if(command == 'help'){
-        client.commands.get('help').execute(message, args);
+        client.commands.get('help').execute(message, args, Discord);
     } else if(command == 'desc'){
         client.commands.get('desc').execute(message, args);
     } else if(command == 'paradox_77'){
@@ -47,8 +47,6 @@ client.on('message', message =>{
         client.commands.get('dremistakem').execute(message, args);
     } else if(command == 'purge'){
         client.commands.get('purge').execute(message, args);
-    } else if(command == 'embed'){
-        client.commands.get('embed').execute(message, args, Discord)
     } else if(command == 'dog'){
         client.commands.get('dog').execute(message, args)
     } else if(command == 'hi'){
@@ -57,7 +55,7 @@ client.on('message', message =>{
         client.commands.get('kick').execute(message, args)
     } else if(command == 'ban'){
         client.commands.get('ban').execute(message, args)
-    } 
+    }
 });
 
 const server = require("express")()
