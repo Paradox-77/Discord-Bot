@@ -3,12 +3,12 @@ const { MessageManager } = require("discord.js");
 module.exports = {
     name: 'unmute',
     description: "Unmutes Players",
-    execute(message, args){
+    execute(message, args) {
 
-        if(message.member.roles.cache.has('786805870846935090')){
+        if (message.member.roles.cache.has('786805870846935090')) {
 
             const muteTarget = message.mentions.users.first();
-            if(muteTarget){
+            if (muteTarget) {
                 let mainRole = message.guild.roles.cache.find(r => r.name === 'Member')
                 let muteRole = message.guild.roles.cache.find(r => r.name === 'Muted')
 
@@ -21,8 +21,8 @@ module.exports = {
                 message.reply("Sorry master, I was unable to unmute that member");
             }
 
-            } else {
-                message.reply('lol, i dont listen to you')
+        } else {
+            message.reply('lol, i dont listen to you')
         }
 
 

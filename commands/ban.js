@@ -16,7 +16,7 @@ module.exports = {
             
             } else {
             message.channel.send('Only my dad can do that.')
-        }
+        } 
 
 
     }

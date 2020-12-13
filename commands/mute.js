@@ -15,7 +15,7 @@ module.exports = {
 
                 let memberTarget = message.guild.members.cache.get(muteTarget.id);
 
-                if(!args[1]){
+                if (!args[1]) {
                     memberTarget.roles.remove(mainRole.id);
                     memberTarget.roles.add(muteRole.id);
                     message.reply(`has muted <@${memberTarget.user.id}> indefinitely.`);
@@ -26,7 +26,7 @@ module.exports = {
                 memberTarget.roles.add(muteRole.id);
                 message.reply(`has muted <@${memberTarget.user.id}> for ${ms(ms(args[1]))}.`);
 
-                setTimeout(function(){
+                setTimeout(function () {
                     memberTarget.roles.add(mainRole.id);
                     memberTarget.roles.remove(muteRole.id);
                 }, ms(args[1]));

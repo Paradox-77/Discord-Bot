@@ -1,7 +1,7 @@
 module.exports = {
     name: 'dremistakem',
     description: "Gives description about Dremistakem.",
-    execute(message, args){
+    execute(message, args) {
         message.channel.send('Annoying piece of shit, a gamer, and also a dumbass who doesnt know how to unzip.');
     }
 }
