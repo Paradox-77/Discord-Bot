@@ -1,63 +1,67 @@
-    module.exports = {
-        name: 'reactionrole',
-        description: "Sets up a reaction role message!",
-        async execute(message, args, Discord, client) {
+module.exports = {
+    name: 'reactionrole',
+    description: "Sets up a reaction role message!",
+    async execute(message, args, Discord, client) {
+        if (message.member.roles.cache.has('773390283982372909')) {
             const channel = '775717463224090675';
-            const yellowTeamRole = message.guild.roles.cache.find(role => role.name === "Test-1");
-            const blueTeamRole = message.guild.roles.cache.find(role => role.name === "Test-2");
-    
-            const yellowTeamEmoji = '🟦';
-            const blueTeamEmoji = '🟧';
-    
-            let embed = new Discord.MessageEmbed()
-                .setColor('#e42643')
-                .setTitle('Choose a team to play on!')
-                .setDescription('Choosing a team will allow you to interact with your teammates!\n\n'
-                    + `${yellowTeamEmoji} for yellow team\n`
-                    + `${blueTeamEmoji} for blue team`);
-    
-            let messageEmbed = await message.channel.send(embed);
-            messageEmbed.react(yellowTeamEmoji);
-            messageEmbed.react(blueTeamEmoji);
-    
-            client.on('messageReactionAdd', async (reaction, user) => {
-                if (reaction.message.partial) await reaction.message.fetch();
-                if (reaction.partial) await reaction.fetch();
-                if (user.bot) return;
-                if (!reaction.message.guild) return;
-    
-                if (reaction.message.channel.id == channel) {
-                    if (reaction.emoji.name === yellowTeamEmoji) {
-                        await reaction.message.guild.members.cache.get(user.id).roles.add(yellowTeamRole);
-                    }
-                    if (reaction.emoji.name === blueTeamEmoji) {
-                        await reaction.message.guild.members.cache.get(user.id).roles.add(blueTeamRole);
-                    }
-                } else {
-                    return;
-                }
-    
-            });
-    
-            client.on('messageReactionRemove', async (reaction, user) => {
-    
-                if (reaction.message.partial) await reaction.message.fetch();
-                if (reaction.partial) await reaction.fetch();
-                if (user.bot) return;
-                if (!reaction.message.guild) return;
-    
-    
-                if (reaction.message.channel.id == channel) {
-                    if (reaction.emoji.name === yellowTeamEmoji) {
-                        await reaction.message.guild.members.cache.get(user.id).roles.remove(yellowTeamRole);
-                    }
-                    if (reaction.emoji.name === blueTeamEmoji) {
-                        await reaction.message.guild.members.cache.get(user.id).roles.remove(blueTeamRole);
-                    }
-                } else {
-                    return;
-                }
-            });
+const testOneRole = message.guild.roles.cache.find(role => role.name === "TestOne");
+const testTwoRole = message.guild.roles.cache.find(role => role.name === "TestTwo");
+
+const testOneEmoji = '🟦';
+const testTwoEmoji = '🟧';
+
+let embed = new Discord.MessageEmbed()
+    .setColor('#8600ff')
+    .setTitle('Reaction Roles!')
+    .addFields(
+        { name: 'Cyan', value: `${testOneEmoji} Gives you the test one role.` }
+        , { name: 'Orange', value: `${testTwoEmoji} Gives you the test two role.` }
+    )
+
+let messageEmbed = await message.channel.send(embed);
+messageEmbed.react(testOneEmoji);
+messageEmbed.react(testTwoEmoji);
+
+client.on('messageReactionAdd', async (reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+    if (reaction.partial) await reaction.fetch();
+    if (user.bot) return;
+    if (!reaction.message.guild) return;
+
+    if (reaction.message.channel.id == channel) {
+        if (reaction.emoji.name === testOneEmoji) {
+            await reaction.message.guild.members.cache.get(user.id).roles.add(testOneRole);
         }
-    
-    }   
+        if (reaction.emoji.name === testTwoEmoji) {
+            await reaction.message.guild.members.cache.get(user.id).roles.add(testTwoRole);
+        }
+    } else {
+        return;
+    }
+
+});
+
+client.on('messageReactionRemove', async (reaction, user) => {
+
+    if (reaction.message.partial) await reaction.message.fetch();
+    if (reaction.partial) await reaction.fetch();
+    if (user.bot) return;
+    if (!reaction.message.guild) return;
+
+
+    if (reaction.message.channel.id == channel) {
+        if (reaction.emoji.name === testOneEmoji) {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(testOneRole);
+        }
+        if (reaction.emoji.name === testTwoEmoji) {
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(testTwoRole);
+        }
+    } else {
+        return;
+    }
+});
+
+        } else {
+            message.reply('eat my ass dickhead')
+        }
+    }};   

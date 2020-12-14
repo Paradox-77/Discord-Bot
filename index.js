@@ -10,6 +10,8 @@ const prefix = '!'
 
 const fs = require('fs');
 
+const memberCounter = require('./counters/member-counter');
+
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -21,7 +23,8 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
     console.log('Paradoxic Control is initialized and online.');
-    client.user.setActivity("Test")
+    client.user.setActivity("with your mom", {type:"PLAYING"})
+    memberCounter(client);
 });
 
 client.on('guildMemberAdd', guildMember =>{
@@ -69,7 +72,7 @@ client.on('message', message => {
         client.commands.get('unmute').execute(message, args)
     } else if (command == 'reactionrole') {
         client.commands.get('reactionrole').execute(message, args, Discord, client)
-    }
+    } 
 });
 
 const server = require("express")()
