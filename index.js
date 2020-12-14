@@ -3,7 +3,7 @@ const dotenv = require("dotenv")
 require("dotenv").config()
 dotenv.config()
 
-const client = new Discord.Client();
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
 client.login(process.env.bottoken)
 
 const prefix = '!'
@@ -21,6 +21,14 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
     console.log('Paradoxic Control is initialized and online.');
+    client.user.setActivity("Test")
+});
+
+client.on('guildMemberAdd', guildMember =>{
+    let welcomeRole = guildMember.guild.roles.cache.find(r => r.name === 'Member');
+
+    guildMember.roles.add(welcomeRole);
+    guildMember.guild.channels.cache.get('775608807304855562').send(`Welcome <@${guildMember.user.id}> kids, that fatass join just now.\n<@${guildMember.user.id}> Read the rules or get banned kid!`)
 });
 
 client.on('message', message => {
@@ -59,6 +67,8 @@ client.on('message', message => {
         client.commands.get('mute').execute(message, args)
     } else if (command == 'unmute') {
         client.commands.get('unmute').execute(message, args)
+    } else if (command == 'reactionrole') {
+        client.commands.get('reactionrole').execute(message, args, Discord, client)
     }
 });
 
