@@ -72,7 +72,9 @@ client.on('message', message => {
         client.commands.get('unmute').execute(message, args)
     } else if (command == 'reactionrole') {
         client.commands.get('reactionrole').execute(message, args, Discord, client)
-    } 
+    } else if (command == 'poll') {
+        client.commands.get('poll').execute(message, args, Discord, client)
+    }
 });
 
 const server = require("express")()
