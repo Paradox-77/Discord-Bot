@@ -10,8 +10,8 @@ module.exports = {
 
         let embed = new Discord.MessageEmbed()
             .setColor("#8400ff")
-            .setTitle("Poll!")
-            .setDescription(`${messageArgs}`);
+            .setTitle(`Poll! - Made By ${message.author.username}`)
+            .setDescription(`**"` + `${messageArgs}` + `"**`);
 
         let messageEmbed = await message.channel.send(embed);
         messageEmbed.react("👍");

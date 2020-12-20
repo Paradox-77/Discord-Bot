@@ -10,7 +10,7 @@ module.exports = {
             if (args[0] > 100) return message.reply("Bruh, i cant delete more than 100 messages at a time.");
             if (args[0] < 1) return message.reply("Fatass enter a positive number.");
 
-            await message.channel.messages.fetch({ limit: args[0]}).then(messages => {
+            await message.channel.messages.fetch({ limit: Number(args[0]) + 1}).then(messages => {
                 message.channel.bulkDelete(messages)
             })
         } else {
