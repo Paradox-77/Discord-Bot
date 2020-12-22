@@ -74,6 +74,8 @@ client.on('message', message => {
         client.commands.get('reactionrole').execute(message, args, Discord, client)
     } else if (command == 'poll') {
         client.commands.get('poll').execute(message, args, Discord, client)
+    } else if (command == 'terminate') {
+        client.commands.get('terminate').execute(message, args)
     }
 });
 
