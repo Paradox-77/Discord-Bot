@@ -76,6 +76,16 @@ client.on('message', message => {
         client.commands.get('poll').execute(message, args, Discord, client)
     } else if (command == 'terminate') {
         client.commands.get('terminate').execute(message, args)
+    } else if (command == 'ping') {
+        client.commands.get('ping').execute(message, args)
+    } else if (command == 'blind') {
+        client.commands.get('blind').execute(message, args)
+    } else if (command == 'unblind') {
+        client.commands.get('unblind').execute(message, args)
+    } else if (command == 'blindembed') {
+        client.commands.get('blindembed').execute(message, args, Discord)
+    } else if (command == 'timings') {
+        client.commands.get('timings').execute(message,args, Discord)
     }
 });
 
