@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'ip',
-    description: "This sends the IP adress of the ParadoxicSMP server!",
+    name: 'ping',
+    description: "This sends the ping of the Sentinel bot!",
     execute(message, args) {
         message.channel.send(`:ping_pong: Pong! Welp I have a delay of ${Date.now() - message.createdTimestamp}ms`);
     }
