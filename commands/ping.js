@@ -1,7 +1,11 @@
 module.exports = {
     name: 'ping',
-    description: "This sends the ping of the Sentinel bot!",
-    execute(message, args) {
-        message.channel.send(`:ping_pong: Pong! Welp I have a delay of ${Date.now() - message.createdTimestamp}ms`);
+    description: "This sends the IP adress of the ParadoxicSMP server!",
+    execute(message, args, Discord) {
+        let newEmbed = new Discord.MessageEmbed()
+        .setColor('#8600ff')
+        .setTitle('Pong!')
+        .setDescription(`**🏓 Pong!**\n**Latency is ${Date.now() - message.createdTimestamp}ms**\n**API Latency is ${Date.now() - message.createdTimestamp}ms**`)
+        message.channel.send(newEmbed);
     }
 }
